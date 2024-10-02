@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:weather_detection_app/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 
