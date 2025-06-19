@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
- // Space below the icon
+        // Space below the icon
         Text(
           "${weather?.weatherDescription ?? ''}",
           style: const TextStyle(fontSize: 18),
@@ -130,57 +130,61 @@ class _HomePageState extends State<HomePage> {
   Widget extractInfo() {
     return Container(
         height: MediaQuery.sizeOf(context).height * 0.15,
-        width:  MediaQuery.sizeOf(context).height * 0.80,
+        width: MediaQuery.sizeOf(context).height * 0.80,
         decoration: BoxDecoration(
           color: Colors.deepPurple,
-           borderRadius: BorderRadius.circular(30 ),
-           ),
-           padding: const EdgeInsets.all(2.0,),
-           child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children:[
-        Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text("Max: ${weather?.tempMax?.celsius?.toStringAsFixed(0)} °C",
-         style: const TextStyle(
-          color: Colors.white,
-          fontSize: 15,
+          borderRadius: BorderRadius.circular(30),
         ),
+        padding: const EdgeInsets.all(
+          2.0,
         ),
-            const SizedBox(width: 20),
-        Text("Min: ${weather?.tempMin?.celsius?.toStringAsFixed(0)} °C",
-         style: const TextStyle(
-          color: Colors.white,
-          fontSize: 15,
-        ),
-        )
-      ],
-      ),
-      Row(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text("Wind: ${weather?.windSpeed?.toStringAsFixed(0)} km/h",
-         style: const TextStyle(
-          color: Colors.white,
-          fontSize: 15,
-        ),
-        ),
-        Text("Humidity: ${weather?.humidity?.toStringAsFixed(0)} %",
-         style: const TextStyle(
-          color: Colors.white,
-          fontSize: 15,
-        ),
-        )
-      ],
-      ),
-      ],
-      )
-    );
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Max: ${weather?.tempMax?.celsius?.toStringAsFixed(0)} °C",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Text(
+                  "Min: ${weather?.tempMin?.celsius?.toStringAsFixed(0)} °C",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
+                )
+              ],
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Wind: ${weather?.windSpeed?.toStringAsFixed(0)} km/h",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
+                ),
+                Text(
+                  "Humidity: ${weather?.humidity?.toStringAsFixed(0)} %",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                  ),
+                )
+              ],
+            ),
+          ],
+        ));
   }
-  
 }
